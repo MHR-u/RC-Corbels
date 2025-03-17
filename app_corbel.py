@@ -50,10 +50,12 @@ W3 = np.array([-0.2839, 0.2487, 0.0105, -0.6244, 0.5289, 0.3096, -0.3237, -1.389
 B3 = np.array([0.8576])  # Your B3 array here
 
 # Tansig Activation Function
+
 def tansig(x):
     return 2 / (1 + np.exp(-2 * x)) - 1
 
 # Forward pass through the ANN
+
 def predict(inputs):
     X = np.array(list(inputs.values())).reshape(-1, 1)
     A1 = tansig(np.dot(W1, X) + B1.reshape(-1, 1))
@@ -61,10 +63,13 @@ def predict(inputs):
     Vn = np.dot(W3, A2) + B3  # Output layer (Linear activation)
     return Vn.item()
 
+
+
 st.title("Nominal Shear Strength of Two-Sided RC Corbel")
 
 # Define the raw image URL from GitHub
 image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided%20corbel.png"
+
 
 # Displaying Definitions and Image side by side at the same level
 st.write("## Definitions")
@@ -80,6 +85,8 @@ with col1:
         st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
 with col2:
     st.image(image_url, caption="Two-Sided Corbel", use_container_width=True)  # Enlarge the photo
+
+
 
 st.write("### Enter the input parameters within their valid ranges:")
 inputs = {}
@@ -111,7 +118,7 @@ if selected_input:
         Vn_values.append(predict(temp_inputs))
 
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.plot(input_range, Vn_values, label=f"Vn vs. {selected_input}", color='blue')
+    ax.plot(input_range, Vn_values, label=f"Vu vs. {selected_input}", color='blue')
     ax.set_title(f"Vn vs. {selected_input}")
     ax.set_xlabel(f"{selected_input} ({description})")
     ax.set_ylabel("Vn (kN)")
