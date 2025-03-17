@@ -105,7 +105,7 @@ if st.button("Calculate Vn"):
 
 # Plot Generation
 st.write("## Plot Vn vs. Selected Input")
-selected_input = st.selectbox("Select an input to plot against Vu:", list(input_definitions.keys()))
+selected_input = st.selectbox("Select an input to plot against Vn:", list(input_definitions.keys()))
 
 if selected_input:
     description, min_val, max_val = input_definitions[selected_input]
