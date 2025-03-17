@@ -126,8 +126,3 @@ if selected_input:
     ax.grid(True)
     ax.legend()
     st.pyplot(fig)
-
-# Displaying Definitions
-st.write("## Input Definitions")
-for key, (definition, min_val, max_val) in input_definitions.items():
-    st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
