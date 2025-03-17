@@ -7,19 +7,19 @@ st.set_page_config(page_title="Ultimate Shear Strength of RC Corbel", layout="wi
 
 # Input Definitions and Ranges
 input_definitions = {
-    "√(f_ck)": ("Square root of concrete compressive strength (MPa)", 3.87, 10.25),
-    "a_v": ("Shear span (mm)", 53.0, 870.0),
+    "√(fck)": ("Square root of concrete compressive strength (MPa)", 3.87, 10.25),
+    "av": ("Shear span (mm)", 53.0, 870.0),
     "b": ("Width of the section (mm)", 115.0, 600.0),
-    "w_c": ("Width of the column (mm)", 80.0, 1200.0),
+    "wc": ("Width of the column (mm)", 80.0, 1200.0),
     "d": ("Effective depth (mm)", 92.0, 1059.0),
     "h": ("Total depth (mm)", 120.0, 1143.0),
     "a/d": ("Shear span-to-depth ratio", 0.11, 1.69),
-    "ρ_f": ("Longitudinal reinforcement ratio (%)", 0.21, 4.93),
-    "ρ_h": ("Horizontal reinforcement ratio (%)", 0.0, 2.33),
-    "ρ_v": ("Vertical reinforcement ratio (%)", 0.0, 1.10),
-    "f_yt": ("Yield strength of transverse reinforcement (MPa)", 298.0, 1480.0),
-    "f_yh": ("Yield strength of horizontal reinforcement (MPa)", 0.0, 760.0),
-    "f_yv": ("Yield strength of vertical reinforcement (MPa)", 0.0, 614.0)
+    "ρf": ("Longitudinal reinforcement ratio (%)", 0.21, 4.93),
+    "ρh": ("Horizontal reinforcement ratio (%)", 0.0, 2.33),
+    "ρv": ("Vertical reinforcement ratio (%)", 0.0, 1.10),
+    "fyt": ("Yield strength of transverse reinforcement (MPa)", 298.0, 1480.0),
+    "fyh": ("Yield strength of horizontal reinforcement (MPa)", 0.0, 760.0),
+    "fyv": ("Yield strength of vertical reinforcement (MPa)", 0.0, 614.0)
 }
 
 # ANN Weights and Biases
@@ -78,7 +78,8 @@ for key, (description, min_val, max_val) in input_definitions.items():
 # Predict Vn
 if st.button("Calculate Vn"):
     Vn = predict(normalized_inputs)
-    st.write(f"### Predicted Vn: {Vn:.2f} kN")
+    Vn_adjusted = Vn * (2817 - 51) + 51  # Multiply by (2817 - 51)
+    st.write(f"### Predicted Vn: {Vn_adjusted:.3f} kN")  # Display with 3 decimal places
 
 # Plot Generation
 st.write("## Plot Vu vs. Selected Input")
