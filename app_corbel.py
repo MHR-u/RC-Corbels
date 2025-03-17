@@ -70,12 +70,6 @@ st.title("Ultimate Shear Strength of RC Corbel")
 # Define the raw image URL from GitHub
 image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided%20corbel.png"
 
-# Example input definitions
-input_definitions = {
-    "Vn": ("Predicted shear strength of the concrete beam", 0, 1000),
-    "a": ("Some definition for 'a'", 0, 500),
-    # Add more definitions as needed
-}
 
 # Displaying Definitions and Image side by side at the same level
 st.write("## Input Definitions")
