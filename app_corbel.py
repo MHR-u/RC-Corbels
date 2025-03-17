@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Streamlit app interface
-st.set_page_config(page_title="Ultimate Shear Strength of RC Corbel", layout="wide")
+st.set_page_config(page_title="Nominal Shear Strength of Two-Sided RC Corbel", layout="wide")
 
 # Input Definitions and Ranges
 input_definitions = {
@@ -65,14 +65,14 @@ def predict(inputs):
 
 
 
-st.title("Ultimate Shear Strength of RC Corbel")
+st.title("Nominal Shear Strength of Two-Sided RC Corbel")
 
 # Define the raw image URL from GitHub
 image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided%20corbel.png"
 
 
 # Displaying Definitions and Image side by side at the same level
-st.write("## Input Definitions")
+st.write("## Definitions")
 
 # Use a single column for all definitions and the image at the same level
 st.write("**Vn:** Predicted nominal shear strength of two-sided RC corbel.")
