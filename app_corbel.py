@@ -63,21 +63,30 @@ def predict(inputs):
     Vn = np.dot(W3, A2) + B3  # Output layer (Linear activation)
     return Vn.item()
 
+
+
 # User Input
 st.title("Ultimate Shear Strength of RC Corbel")
-# Displaying Definitions
-st.write("## Input Definitions")
-for key, (definition, min_val, max_val) in input_definitions.items():
-    st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
+
 # Define the raw image URL from GitHub
 image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided%20corbel.png"
-# Display the image alongside definitions
-col1, col2 = st.columns([1, 1])
+
+# Displaying Definitions and Image side by side at the same level
+st.write("## Input Definitions")
+
+# Use a single column for all definitions and the image at the same level
+st.write("### Definition of Vn:")
+st.write("Vn is the predicted shear strength of the concrete beam.")
+
+# Display the image inline with the definitions
+col1, col2 = st.columns([3, 1])  # Adjust column size for better layout
 with col1:
-    st.write("### Definition of Vn:")
-    st.write("Vn is the predicted shear strength of the concrete beam.")
+    # Loop through and display the input definitions
+    for key, (definition, min_val, max_val) in input_definitions.items():
+        st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
 with col2:
     st.image(image_url, caption="Two-Sided Corbel", use_column_width=True)
+
 
 
 st.write("### Enter the input parameters within their valid ranges:")
