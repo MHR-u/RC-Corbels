@@ -119,7 +119,7 @@ if selected_input:
 
     # Plotting
     fig, ax = plt.subplots(figsize=(8, 6))
-    ax.plot(input_range, Vn_values, label=f"Vu vs. {selected_input}", color='blue')
+    ax.plot(input_range, Vn_values, label=f"Vn vs. {selected_input}", color='blue')
     ax.set_title(f"Vn vs. {selected_input}")
     ax.set_xlabel(f"{selected_input} ({description})")
     ax.set_ylabel("Vn (kN)")
