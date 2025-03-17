@@ -75,8 +75,7 @@ image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided
 st.write("## Input Definitions")
 
 # Use a single column for all definitions and the image at the same level
-st.write("### Definition of Vn:")
-st.write("Vn is the predicted shear strength of the concrete beam.")
+st.write("*Vn:* Predicted nominal shear strength of two-sided RC corbel.")
 
 # Display the image inline with the definitions
 col1, col2 = st.columns([2, 3])  # Adjust column size to make the image larger
