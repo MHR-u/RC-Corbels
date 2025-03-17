@@ -65,12 +65,12 @@ def predict(inputs):
 
 # User Input
 st.title("Ultimate Shear Strength of RC Corbel")
-st.write("### Enter the input parameters within their valid ranges:")
 # Displaying Definitions
 st.write("## Input Definitions")
 for key, (definition, min_val, max_val) in input_definitions.items():
     st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
 
+st.write("### Enter the input parameters within their valid ranges:")
 inputs = {}
 normalized_inputs = {}
 
