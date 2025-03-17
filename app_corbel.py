@@ -75,7 +75,7 @@ image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided
 st.write("## Input Definitions")
 
 # Use a single column for all definitions and the image at the same level
-st.write("*Vn:* Predicted nominal shear strength of two-sided RC corbel.")
+st.write("**Vn:** Predicted nominal shear strength of two-sided RC corbel.")
 
 # Display the image inline with the definitions
 col1, col2 = st.columns([2, 3])  # Adjust column size to make the image larger
@@ -104,8 +104,8 @@ if st.button("Calculate Vn"):
     st.write(f"### Predicted Vn: {Vn_adjusted:.3f} kN")  # Display with 3 decimal places
 
 # Plot Generation
-st.write("## Plot Vu vs. Selected Input")
-selected_input = st.selectbox("Select an input to plot against Vu:", list(input_definitions.keys()))
+st.write("## Plot Vn vs. Selected Input")
+selected_input = st.selectbox("Select an input to plot against Vn:", list(input_definitions.keys()))
 
 if selected_input:
     description, min_val, max_val = input_definitions[selected_input]
@@ -119,9 +119,9 @@ if selected_input:
 
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(input_range, Vn_values, label=f"Vu vs. {selected_input}", color='blue')
-    ax.set_title(f"Vu vs. {selected_input}")
+    ax.set_title(f"Vn vs. {selected_input}")
     ax.set_xlabel(f"{selected_input} ({description})")
-    ax.set_ylabel("Vu (kN)")
+    ax.set_ylabel("Vn (kN)")
     ax.grid(True)
     ax.legend()
     st.pyplot(fig)
