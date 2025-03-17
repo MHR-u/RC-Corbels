@@ -104,7 +104,7 @@ if st.button("Calculate Vn"):
     st.write(f"### Predicted Vn: {Vn_adjusted:.3f} kN")  # Display with 3 decimal places
 
 # Plot Generation
-st.write("## Plot Vu vs. Selected Input")
+st.write("## Plot Vn vs. Selected Input")
 selected_input = st.selectbox("Select an input to plot against Vu:", list(input_definitions.keys()))
 
 if selected_input:
