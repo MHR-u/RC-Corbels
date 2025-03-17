@@ -104,8 +104,8 @@ if st.button("Calculate Vn"):
     st.write(f"### Predicted Vn: {Vn_adjusted:.3f} kN")  # Display with 3 decimal places
 
 # Plot Generation
-st.write("## Plot Vn vs. Selected Input")
-selected_input = st.selectbox("Select an input to plot against Vn:", list(input_definitions.keys()))
+st.write("## Plot Vu vs. Selected Input")
+selected_input = st.selectbox("Select an input to plot against Vu:", list(input_definitions.keys()))
 
 if selected_input:
     description, min_val, max_val = input_definitions[selected_input]
@@ -117,11 +117,17 @@ if selected_input:
         temp_inputs[selected_input] = (value - min_val) / (max_val - min_val)
         Vn_values.append(predict(temp_inputs))
 
+    # Plotting
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.plot(input_range, Vn_values, label=f"Vu vs. {selected_input}", color='blue')
-    ax.set_title(f"Vn vs. {selected_input}")
+    ax.set_title(f"Vu vs. {selected_input}")
     ax.set_xlabel(f"{selected_input} ({description})")
-    ax.set_ylabel("Vn (kN)")
+    ax.set_ylabel("Vu (kN)")
     ax.grid(True)
     ax.legend()
     st.pyplot(fig)
+
+# Displaying Definitions
+st.write("## Input Definitions")
+for key, (definition, min_val, max_val) in input_definitions.items():
+    st.write(f"**{key}:** {definition}. Range: [{min_val} - {max_val}]")
