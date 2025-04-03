@@ -126,3 +126,8 @@ if selected_input:
     ax.grid(True)
     ax.legend()
     st.pyplot(fig)
+    st.write("""
+### Developer:
+**Anonymous, as the manuscript is under review**
+.............................................. 
+""", unsafe_allow_html=True)
