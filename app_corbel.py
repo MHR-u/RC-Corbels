@@ -126,5 +126,9 @@ if selected_input:
     st.pyplot(fig)
     st.write("""
 ### Developer:
-**Anonymous, as the manuscript is under review.** 
+**Maher K. Abbas<sup>1</sup>** 
+<sup>1</sup>Civil Engineering Department, College of Engineering, Al-Qasim Green University, Babylon, 51013, Iraq.
+### Supervisor:
+**Ammar Yasir Ali<sup>2</sup>**
+<sup>2</sup>College of Engineering, University of Babylon, Babylon, 51002, Iraq.
 """, unsafe_allow_html=True)
