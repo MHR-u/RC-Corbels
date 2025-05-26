@@ -64,11 +64,10 @@ def predict(inputs):
     return Vn.item()
 
 
-
 st.title("Nominal Shear Strength of Two-Sided RC Corbel")
 
 # Define the raw image URL from GitHub
-image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20RCCs.png"
+image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two_RCCs.png"
 
 # Displaying Definitions and Image side by side at the same level
 st.write("## Definitions")
