@@ -7,7 +7,7 @@ st.set_page_config(page_title="Nominal Shear Strength of Two-Sided RC Corbel", l
 
 # Input Definitions and Ranges
 input_definitions = {
-    "√(fck)": ("Square root of concrete compressive strength (MPa)", 3.87, 10.25),
+    "√(f'c)": ("Square root of concrete compressive strength (MPa)", 3.87, 10.25),
     "av": ("Shear span (mm)", 53.0, 870.0),
     "b": ("Width of the section (mm)", 115.0, 600.0),
     "wc": ("Width of the column (mm)", 80.0, 1200.0),
@@ -17,7 +17,7 @@ input_definitions = {
     "ρf": ("Longitudinal reinforcement ratio (%)", 0.21, 4.93),
     "ρh": ("Horizontal reinforcement ratio (%)", 0.0, 2.33),
     "ρv": ("Vertical reinforcement ratio (%)", 0.0, 1.10),
-    "fyt": ("Yield strength of transverse reinforcement (MPa)", 298.0, 1480.0),
+    "fyf": ("Yield strength of transverse reinforcement (MPa)", 298.0, 1480.0),
     "fyh": ("Yield strength of horizontal reinforcement (MPa)", 0.0, 760.0),
     "fyv": ("Yield strength of vertical reinforcement (MPa)", 0.0, 614.0)
 }
@@ -68,8 +68,7 @@ def predict(inputs):
 st.title("Nominal Shear Strength of Two-Sided RC Corbel")
 
 # Define the raw image URL from GitHub
-image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20sided%20corbel.png"
-
+image_url = "https://raw.githubusercontent.com/MHR-u/RC-Corbels/main/Two%20RCCs.png"
 
 # Displaying Definitions and Image side by side at the same level
 st.write("## Definitions")
